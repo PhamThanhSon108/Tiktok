@@ -4,6 +4,8 @@
 :root {
 --default-layout-header-height: 60px;
 --default-layout-header-width: 1050px;
+--black: #000;
+--text-color: #000;
 }
 
 * {
@@ -19,4 +21,13 @@ html {
     font-family: 'IBM Plex Sans',sans-serif;
     font-size: 1.6rem;
     text-rendering: optimizeSpeed;
+ }
+ button, input, [tabindex] {
+     outline: none;
+     border: none;
+ }
+
+ a[href] {
+     color: var(--text-color);
+     text-decoration: none;
  }
