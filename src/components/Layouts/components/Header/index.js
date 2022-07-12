@@ -8,6 +8,7 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import Tippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 import AccountItem from '~/components/AccountItem';
+import Button from '~/components/Button';
 
 const cx = classNames.bind(styles);
 
@@ -55,7 +56,14 @@ export default function Header() {
                         </button>
                     </div>
                 </Tippy>
-                <div className={cx('action')}>A b c</div>
+                <div className={cx('action')}>
+                    <Button text leftIcon={<FontAwesomeIcon icon={faSearch} className={cx('search-icon')} />}>
+                        Register
+                    </Button>
+                    <Button rounded primary className={cx('custom-login')}>
+                        Log in
+                    </Button>
+                </div>
             </div>
         </header>
     );
