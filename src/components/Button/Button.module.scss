@@ -1,10 +1,12 @@
 .wrapper {
+    display: inline-flex;
     font-size: 1.6rem;
     font-weight: 700;
     min-width: 100px;
     padding: 9px 16px;
     border-radius: 4px;
     cursor: pointer;
+    font-family: 'ProximaNova', sans-serif;
     border: 1px solid transparent;
 
     + .wrapper {
@@ -71,4 +73,10 @@
 .icon + .content,
 .content + .icon {
     margin-left: 8px;
+}
+
+.icon {
+    text-align: center;
+    display: inline-block;
+    width: 24px;
 }

@@ -1,13 +1,13 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600;700&display=swap');
 
 :root {
---default-layout-header-height: 60px;
---default-layout-header-width: 1050px;
---black: #000;
---text-color: #000;
---primary-btn: rgb(254, 44, 85);
---while: #fff
+    --default-layout-header-height: 60px;
+    --default-layout-header-width: 1050px;
+    --default-layout-horizontal-space: 24px;
+    --black: #000;
+    --text-color: #000;
+    --primary-btn: rgb(254, 44, 85);
+    --while: #fff;
 }
 
 * {
@@ -19,17 +19,61 @@
 html {
     font-size: 62.5%;
 }
- body {
-    font-family: 'IBM Plex Sans',sans-serif;
+body {
+    font-family: 'ProximaNova', sans-serif;
     font-size: 1.6rem;
     text-rendering: optimizeSpeed;
- }
- button, input, [tabindex] {
-     outline: none;
-     border: none;
- }
+}
+button,
+input,
+[tabindex] {
+    outline: none;
+    border: none;
+}
 
- a[href] {
-     color: var(--text-color);
-     text-decoration: none;
- }
+a[href] {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/Proxima-Nova-Regular.woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/ProximaNova-Semibold.woff2');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/Proxima-Nova-Semibold.woff2');
+    font-weight: 400;
+}
+
+// Tippy tooltip
+body {
+    .tippy-box {
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+        background-color: rgba(84, 84, 84, 0.92);
+    }
+
+    .tippy-arrow {
+        color: rgba(84, 84, 84, 0.92);
+        top: -10px;
+    }
+    .tippy-box[data-placement^='bottom'] > .tippy-arrow:before {
+        top: -8px;
+        left: 0;
+        border-width: 0 8px 8px;
+    }
+    .tippy-content {
+        padding: 8px 9 px;
+    }
+}

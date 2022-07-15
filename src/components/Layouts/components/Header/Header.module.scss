@@ -11,6 +11,7 @@
     justify-content: center;
 }
 .inner {
+    padding: 0 var(--default-layout-horizontal-space);
     height: 100%;
     width: var(--default-layout-header-width);
     display: flex;
@@ -99,6 +100,36 @@
 .search-icon {
 }
 
-.custom-login {
-    color: aquamarine;
+// .custom-login {
+//     color: aquamarine;
+// }
+
+.action {
+    display: flex;
+    align-items: center;
+}
+
+.more-btn {
+    padding: 8px;
+    padding-left: 26px;
+    font-size: 2rem;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.action-btn {
+    color: #161823;
+    font-size: 2.2rem;
+    background-color: transparent;
+    padding: 4px 12px;
+    cursor: pointer;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 12px;
+    cursor: pointer;
 }

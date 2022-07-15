@@ -1,0 +1,40 @@
+.content {
+    width: 242px;
+    .menu-item {
+        margin-left: 0;
+    }
+
+    .separate {
+        border-top: 1px solid rgba(22, 24, 35, 0.12);
+    }
+}
+.menu-popper {
+    padding-bottom: 8px;
+}
+.menu-item {
+    padding: 11px 16px;
+    width: 100%;
+    border-radius: 0;
+    font-weight: 500;
+    line-height: 1.8rem;
+}
+
+//Header title
+
+.header {
+    position: relative;
+    margin-top: -8px;
+    padding: 16px 0px;
+}
+.back-btn {
+    width: 50px;
+    height: 100%;
+    background-color: transparent;
+    cursor: pointer;
+}
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
