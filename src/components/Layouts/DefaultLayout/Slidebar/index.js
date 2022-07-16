@@ -54,9 +54,9 @@ export default function Slidebar() {
             {
                 <>
                     <button onClick={handleOnclick}>Xem điểm</button>
-                    {}
                 </>
             }
         </aside>
     );
 }
+<></>;
