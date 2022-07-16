@@ -9,7 +9,9 @@ import HeadlessTippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 import AccountItem from '~/components/AccountItem';
 import 'tippy.js/dist/tippy.css';
+
 import { useDebounce } from '~/hooks';
+import { search } from '~/apiServices/searchServices.js';
 
 const cx = classNames.bind(styles);
 export default function Search() {
@@ -20,7 +22,7 @@ export default function Search() {
 
     const inputRef = useRef();
 
-    const debounce = useDebounce(searchValue, 3000);
+    const debounce = useDebounce(searchValue, 500);
 
     const handleClear = () => {
         setSearchValue('');
@@ -33,18 +35,15 @@ export default function Search() {
             setSearchResult([]);
             return;
         }
-        setLoading(true);
-        if (searchValue) {
-            fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounce)}&type=less`)
-                .then((res) => res.json())
-                .then((res) => {
-                    setLoading(false);
-                    setSearchResult(res.data);
-                })
-                .catch((e) => {
-                    setLoading(false);
-                });
-        }
+        const fetchApi = async () => {
+            setLoading(true);
+            try {
+                const res = await search(debounce);
+                setSearchResult(res);
+                setLoading(false);
+            } catch (error) {}
+        };
+        fetchApi();
         // setTimeout(() => {
         //     setSearchResult([1]);
         // }, 3000);

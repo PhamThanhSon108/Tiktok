@@ -1,32 +1,30 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './Slidebar.module.scss';
-import axios from 'axios';
-// import axios from 'axios';
 const cx = classNames.bind(styles);
 export default function Slidebar() {
     const a = '';
-    async function handleOnclick() {
-        try {
-            const data = await fetch('https://sv.ut.edu.vn/tra-cuu-thong-tin.html', {
-                method: 'POST',
-                body: JSON.stringify({
-                    MaSinhVien: '1951120124',
-                    NgaySinh: '02/09/2001',
-                }),
-                headers: {
-                    // 'Access-Control-Allow-Origin': '*',
-                    // 'X-Requested-With': 'XMLHttpRequest',
-                    'Content-Type': 'application/json',
-                },
+    // async function handleOnclick() {
+    //     try {
+    //         const data = await fetch('https://sv.ut.edu.vn/tra-cuu-thong-tin.html', {
+    //             method: 'POST',
+    //             body: JSON.stringify({
+    //                 MaSinhVien: '1951120124',
+    //                 NgaySinh: '02/09/2001',
+    //             }),
+    //             headers: {
+    //                 // 'Access-Control-Allow-Origin': '*',
+    //                 // 'X-Requested-With': 'XMLHttpRequest',
+    //                 'Content-Type': 'application/json',
+    //             },
 
-                mode: 'no-cors',
-            });
-            console.log(data);
-        } catch (error) {
-            console.log(error);
-        }
-    }
+    //             mode: 'no-cors',
+    //         });
+    //         console.log(data);
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // }
     // const handleOnclick = async () => {
     //     const headers = {
     //         'Content-Type': 'text/html; charset=utf-8',
@@ -53,7 +51,7 @@ export default function Slidebar() {
         <aside className={cx('wrapper')}>
             {
                 <>
-                    <button onClick={handleOnclick}>Xem điểm</button>
+                    <button>Xem điểm</button>
                 </>
             }
         </aside>
