@@ -9,6 +9,7 @@ import HeadlessTippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 import AccountItem from '~/components/AccountItem';
 import 'tippy.js/dist/tippy.css';
+import { useDebounce } from '~/hooks';
 
 const cx = classNames.bind(styles);
 export default function Search() {
@@ -16,7 +17,10 @@ export default function Search() {
     const [searchResult, setSearchResult] = useState([]);
     const [showResult, setShowResult] = useState(true);
     const [loading, setLoading] = useState(false);
+
     const inputRef = useRef();
+
+    const debounce = useDebounce(searchValue, 3000);
 
     const handleClear = () => {
         setSearchValue('');
@@ -25,13 +29,13 @@ export default function Search() {
 
     const handleHideResult = () => setShowResult(false);
     useEffect(() => {
-        if (!searchValue.trim()) {
+        if (!debounce?.trim()) {
             setSearchResult([]);
             return;
         }
         setLoading(true);
         if (searchValue) {
-            fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(searchValue)}&type=less`)
+            fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounce)}&type=less`)
                 .then((res) => res.json())
                 .then((res) => {
                     setLoading(false);
@@ -44,7 +48,7 @@ export default function Search() {
         // setTimeout(() => {
         //     setSearchResult([1]);
         // }, 3000);
-    }, [searchValue]);
+    }, [debounce]);
     return (
         <HeadlessTippy
             interactive
