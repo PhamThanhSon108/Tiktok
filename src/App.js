@@ -8,7 +8,7 @@ function App() {
             <Router>
                 <div className="App">
                     <Routes>
-                        {publicRoutes.map((value) => {
+                        {publicRoutes.map((value, index) => {
                             const Page = value.component;
                             let Layout = DefaultLayout;
                             if (value.layout) {
@@ -19,6 +19,7 @@ function App() {
                             }
                             return (
                                 <Route
+                                    key={index}
                                     path={value.path}
                                     element={
                                         <Layout>

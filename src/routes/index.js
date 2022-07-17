@@ -7,7 +7,7 @@ import routesConfig from '~/config/routes.js';
 export const publicRoutes = [
     { path: routesConfig.home, component: Home },
     { path: routesConfig.following, component: Following },
-    // { path: '/profile', component: Profile, layout: HeaderOnlyLayout },
+    { path: '/profile', component: Profile, layout: HeaderOnlyLayout },
     { path: routesConfig.upload, component: Upload, layout: null },
     { path: routesConfig.frofile, component: Profile },
 ];

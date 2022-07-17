@@ -62,6 +62,54 @@ const MENU_ITEMS = [
                     code: 'vn2',
                     title: 'Việt Nam2',
                 },
+                {
+                    code: 'vn2',
+                    title: 'Việt Nam2',
+                },
+                {
+                    code: 'vn2',
+                    title: 'Việt Nam2',
+                },
+                {
+                    code: 'vn2',
+                    title: 'Việt Nam2',
+                },
+                {
+                    code: 'vn2',
+                    title: 'Việt Nam2',
+                },
+                {
+                    code: 'vn2',
+                    title: 'Việt Nam2',
+                },
+                {
+                    code: 'vn2',
+                    title: 'Việt Nam2',
+                },
+                {
+                    code: 'vn2',
+                    title: 'Việt Nam2',
+                },
+                {
+                    code: 'vn2',
+                    title: 'Việt Nam2',
+                },
+                {
+                    code: 'vn2',
+                    title: 'Việt Nam2',
+                },
+                {
+                    code: 'vn2',
+                    title: 'Việt Nam2',
+                },
+                {
+                    code: 'vn2',
+                    title: 'Việt Nam2',
+                },
+                {
+                    code: 'vn2',
+                    title: 'Việt Nam2',
+                },
             ],
         },
     },
@@ -70,7 +118,6 @@ const MENU_ITEMS = [
 ];
 
 export default function Header() {
-    console.log(images);
     const handleOnchange = (i) => {
         console.log(i);
     };
