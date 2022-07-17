@@ -1,4 +1,4 @@
-import Tippy from '@tippyjs/react';
+import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 import React, { useState } from 'react';
 import styles from './Menu.module.scss';
@@ -7,7 +7,7 @@ import MenuItem from './MenuItem';
 import Header from './Header';
 
 const cx = classNames.bind(styles);
-export default function Menu({ children, items = [], onChange = () => {} }) {
+export default function Menu({ hideOnClick = false, children, items = [], onChange = () => {} }) {
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
     const renderItems = () => {
@@ -30,9 +30,9 @@ export default function Menu({ children, items = [], onChange = () => {} }) {
     };
     return (
         <Tippy
+            hideOnClick={hideOnClick}
             interactive
-            // visible
-            delay={[100, 200]}
+            delay={[100, 500]}
             offset={[16, 18]}
             placement="bottom-end"
             render={(attrs) => (

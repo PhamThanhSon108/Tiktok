@@ -29,6 +29,7 @@ export default function Search() {
         inputRef.current.focus();
     };
 
+    const handleSubmit = (e) => {};
     const handleHideResult = () => setShowResult(false);
     useEffect(() => {
         if (!debounce?.trim()) {
@@ -71,8 +72,11 @@ export default function Search() {
                     placeholder="Please search"
                     spellCheck={false}
                     onChange={(e) => {
+                        const searchInput = e.target.value;
                         console.log(e.target.value);
-                        setSearchValue(e.target.value);
+                        if (!e.target.value.startsWith(' ')) {
+                            setSearchValue(e.target.value);
+                        }
                     }}
                     onFocus={() => setShowResult(true)}
                 />
@@ -83,7 +87,7 @@ export default function Search() {
                 )}
                 {loading && <FontAwesomeIcon icon={faSpinner} className={cx('loading')} />}
 
-                <button className={cx('search-btn')}>
+                <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
                     <FontAwesomeIcon icon={faSearch} className={cx('search-icon')} />
                 </button>
             </div>

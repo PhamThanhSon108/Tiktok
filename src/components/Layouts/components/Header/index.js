@@ -22,7 +22,9 @@ import Menu from '~/components/Popper/Menu';
 import 'tippy.js/dist/tippy.css';
 import { UploadIcon } from '~/components/Icons';
 import Search from '../Search';
+import { Link } from 'react-router-dom';
 
+import routesConfig from '~/config/routes.js';
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
     {
@@ -85,9 +87,9 @@ export default function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
-                    <img src={images.logo} />
-                </div>
+                <Link to={'/'} className={cx('logo')}>
+                    <img src={images.logo} to={routesConfig.home} />
+                </Link>
                 <Search />
                 <div className={cx('action')}>
                     {currentUser ? (
